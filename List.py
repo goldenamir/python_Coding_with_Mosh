@@ -32,3 +32,99 @@ print(multiply(1, 2, 3, 4, 5))
 first = numbers[0]
 second = numbers[1]
 third = numbers[2]
+
+""" Looping over Lists """"
+letters = ['a', 'b', 'c']
+
+for index, letter in enumerate(letters):  # for getting index
+    print(letter)
+    print(index, letter)
+    # print(letter[0], letter[1]) # first one gives us index and the second the value
+
+""" Adding or removing items """"
+letters = ['a', 'b', 'c']
+letters.append('d')  # adding
+print(letters)
+# adding element in specific position
+letters.insert(0, "-")  # adding in first place
+
+# remove
+letters.pop(0)  # removing from first index
+letters.pop()  # remove from last of the list
+letters.remove('b')  # loop in list and remove all 'b'from the list
+del letters[1:3]  # we can remove range of items
+
+""" finding item """"
+
+letters = ['a', 'b', 'c']
+print(letters.index('a'))  # gives us the index of 'a'
+print(letters.index('d'))  # there is no 'd'so we will face an error
+
+if 'd' in letters:
+    print(letters.index('d'))  # with this code we will not have any error
+
+# there is better way to handle the index of not existing element
+print(letters.count('d'))  # now we wonot have any error
+
+""" Sorting lists """"
+numbers = [3, 51, 2, 8, 6]
+numbers.sort()  # sort in ascending order
+print(numbers)
+numbers.sort(reverse=Ture)  # sort in descending order
+sorted(numbers)  # give new sorted list and the original one has not been sorted
+print(sorted(numbers))
+
+
+items = [
+    ("product1", 10),
+    ("product2", 20),
+    ("product3", 30)
+]
+# for sorting the toppel
+
+
+def sort_item(item):
+    return item[1]
+
+
+items.sort(key=sort_item)
+print(items)
+
+""" Lambdas function """"
+
+items = [
+    ("product1", 10),
+    ("product2", 20),
+    ("product3", 30)
+]
+# for sorting the toppel
+# def sort_item(item): # has been written as lambda function
+#     return item[1]
+
+items.sort(key=lambda item: item[1])  # lambda is unanymous function
+print(items)
+
+""" Map function """
+items = [
+    ("product1", 10),
+    ("product2", 20),
+    ("product3", 30)
+]
+
+# we wanna to make a list of numbers
+prices = []
+for item in items:
+    prices.append(item[1])
+
+print(prices)
+
+# better way is MAP function
+prices = list(map(lambda item: item[1], items))
+print(prices)
+
+""" Filter function """"
+filtered = []
+
+prices_bigger_than_ten_dollar = list(filter(lambda item: item[1] >= 10, items))
+
+""" List comprehenstions """
