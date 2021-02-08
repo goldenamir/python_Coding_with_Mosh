@@ -128,3 +128,34 @@ filtered = []
 prices_bigger_than_ten_dollar = list(filter(lambda item: item[1] >= 10, items))
 
 """ List comprehenstions """
+# [expression for item in items]
+prices = [item[1] for item in items]  # it is more better than other methods
+
+# filtered = [expression for item in items]
+filtered = [if item[1] >= 10 for item in items]
+
+
+""" zip function """"
+list1 = [1, 2, 3]
+list2 = [10, 20, 30]
+print(list(zip(list1, list2)))
+print(list(zip('abc', list1, list2)))
+
+
+""" stacks """
+# LIFO last in first out
+# this topic is related to data structure but we can use it in python programming as well.
+browsing_session = []
+browsing_session.append(1)
+browsing_session.append(2)
+browsing_session.append(3)
+print(browsing_session)
+last = browsing_session.pop()
+print(last)
+print(browsing_session)
+print(browsing_sessin[-1])
+if not browsing_session:  # this checks we have an empty session/list
+    print('disable')
+
+""" Queues """"
+# LIFO : Last in First out
