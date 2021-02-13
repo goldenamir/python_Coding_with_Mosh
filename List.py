@@ -1,5 +1,6 @@
 """ Accessing Items """
 
+from collections import deque
 letters = ["a", "b", "c", "d"]
 letters[0] = 'A'
 print(letters[0])
@@ -159,3 +160,14 @@ if not browsing_session:  # this checks we have an empty session/list
 
 """ Queues """"
 # LIFO : Last in First out
+# FiFO : first in first out
+queue = deque([])
+queue.append(1)
+queue.append(2)
+queue.append(3)
+queue.popleft()  # remove from first
+if not queue:
+    print('it is empty')
+
+
+""" Arrays """"
