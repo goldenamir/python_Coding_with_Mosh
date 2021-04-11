@@ -4,7 +4,7 @@ class TagCloud:
 
     def add(self, tag):
         self.tags[tag.lower()] = self.tags.get(tag, 0) + 1
-
+ 
     def __getitem__(self, tag):
         return self.tags.get(tag.lower(), 0)
 

@@ -4,7 +4,7 @@ class Point:
         self.x = x
         self.y = y
 
-    def __str__(self):
+    def __str__(self): # is an example of magic function in classes
         return f"({self.x}, {self.y})"
 
     def draw(self):  # is a method of Poing class
